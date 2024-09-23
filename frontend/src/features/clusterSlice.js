@@ -7,7 +7,7 @@ const initialState = {
     error: null,
 };
 
-// Async thunk to add a cluster (POST)
+
 export const addCluster = createAsyncThunk('clusters/addCluster', async (newCluster) => {
     const response = await axios.post('https://dashboard-demo-g6xe.onrender.com/api/clusters', newCluster);
     return response.data;
