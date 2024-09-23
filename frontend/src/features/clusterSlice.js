@@ -9,19 +9,19 @@ const initialState = {
 
 // Async thunk to add a cluster (POST)
 export const addCluster = createAsyncThunk('clusters/addCluster', async (newCluster) => {
-    const response = await axios.post('http://localhost:8000/api/clusters', newCluster);
+    const response = await axios.post('https://dashboard-demo-g6xe.onrender.com/api/clusters', newCluster);
     return response.data;
 });
 
 // Async thunk to fetch clusters (GET)
 export const fetchClusters = createAsyncThunk('clusters/fetchClusters', async () => {
-    const response = await axios.get('http://localhost:8000/api/clusters');
+    const response = await axios.get('https://dashboard-demo-g6xe.onrender.com/api/clusters');
     return response.data;
 });
 
 // Async thunk to delete a cluster (DELETE)
 export const deleteCluster = createAsyncThunk('clusters/deleteCluster', async (clusterId) => {
-    await axios.delete(`http://localhost:8000/api/clusters/${clusterId}`);
+    await axios.delete(`https://dashboard-demo-g6xe.onrender.com/api/clusters/${clusterId}`);
     return clusterId; // Return the ID for easier removal from state
 });
 

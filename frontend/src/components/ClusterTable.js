@@ -37,7 +37,7 @@ const ClusterTable = () => {
     };
     // Fetch clusters from API
     useEffect(() => {
-        fetch('http://localhost:8000/api/clusters')
+        fetch('https://dashboard-demo-g6xe.onrender.com/api/clusters')
             .then(response => response.json())
             .then(data => setClusters(data))
             .catch(error => console.error('Error fetching clusters:', error));
@@ -55,7 +55,7 @@ const ClusterTable = () => {
 
     // Handle create cluster API call
     const handleCreateCluster = () => {
-        fetch('http://localhost:8000/api/clusters', {
+        fetch('https://dashboard-demo-g6xe.onrender.com/api/clusters', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -72,7 +72,7 @@ const ClusterTable = () => {
 
     // Handle delete cluster functionality
     // const handleDeleteCluster = (clusterId) => {
-    //     fetch(`http://localhost:8000/api/clusters/${clusterId}`, {
+    //     fetch(`https://dashboard-demo-g6xe.onrender.com/api/clusters/${clusterId}`, {
     //         method: 'DELETE',
     //     })
     //         .then(() => {
@@ -83,7 +83,7 @@ const ClusterTable = () => {
 
     const handleDeleteCluster = (clusterId) => {
         console.log(`Deleting cluster with ID: ${clusterId}`);
-        fetch(`http://localhost:8000/api/clusters/${clusterId}`, {
+        fetch(`https://dashboard-demo-g6xe.onrender.com/api/clusters/${clusterId}`, {
             method: 'DELETE',
         })
             .then((response) => {
